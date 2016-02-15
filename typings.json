@@ -1,0 +1,7 @@
+{
+  "ambientDependencies": {
+    "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#75357ab8101c32379e2a59f396161a66688c6d26",
+    "google-chart": "github:angular-google-chart/google-chart-typings",
+    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#fab0b336b0414fac23963bde83f7d7077f6cf14c"
+  }
+}

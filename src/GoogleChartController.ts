@@ -11,6 +11,8 @@
         var self = this;
         var resizeHandler;
         var googleChartService;
+        var drawTriggered = false;
+        var drawTimeout;
 
         init();
 
@@ -19,13 +21,13 @@
         }
 
         function draw() {
-            if (!draw.triggered && (self.chart !== undefined)) {
-                draw.triggered = true;
+            if (!drawTriggered && (self.chart !== undefined)) {
+                drawTriggered = true;
                 $timeout(setupAndDraw, 0, true);
             }
             else if (self.chart !== undefined) {
-                $timeout.cancel(draw.recallTimeout);
-                draw.recallTimeout = $timeout(draw, 10);
+                $timeout.cancel(drawTimeout);
+                drawTimeout = $timeout(draw, 10);
             }
         }
 
@@ -38,7 +40,7 @@
         //setupAndDraw() calls this.
         function drawChartWrapper() {
             googleChartService.draw();
-            draw.triggered = false;
+            drawTriggered = false;
         }
 
         function init() {

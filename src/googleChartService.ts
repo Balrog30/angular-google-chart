@@ -45,6 +45,12 @@
                 serviceListeners = {},
                 wrapperListeners = {},
                 chartListeners = {};
+                
+            interface ListenerWrapper
+            {
+                (): void;
+                googleListenerHandle?: any;
+            }
 
             _init();
 
@@ -104,7 +110,7 @@
 
             // Credit for this solution:
             // http://stackoverflow.com/a/20125572/3771976
-            function _getSetDescendantProp(obj, desc, value) {
+            function _getSetDescendantProp(obj, desc, value?) {
                 var arr = desc ? desc.split(".") : [];
 
                 while (arr.length && obj) {
@@ -151,7 +157,7 @@
                 // This is the function that will be invoked by the charts API.
                 // Passing the wrapper function allows the use of DI for
                 // for the called function.
-                var listenerWrapper = function() {
+                var listenerWrapper: ListenerWrapper = function() {
                     var locals = {
                         chartWrapper: _chartWrapper,
                         chart: _chartWrapper.getChart(),

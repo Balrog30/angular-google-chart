@@ -25,7 +25,7 @@
 
             settings = angular.extend({}, apiConfig.optionalSettings, settings);
 
-            window.google.load('visualization', apiConfig.version, settings);
+            google.load('visualization', apiConfig.version, settings);
         };
         var head = document.getElementsByTagName('head')[0];
         var script = document.createElement('script');
@@ -36,9 +36,9 @@
         if (script.addEventListener) { // Standard browsers (including IE9+)
             script.addEventListener('load', onLoad, false);
         } else { // IE8 and below
-            script.onreadystatechange = function () {
-                if (script.readyState === 'loaded' || script.readyState === 'complete') {
-                    script.onreadystatechange = null;
+            (<any>script).onreadystatechange = function () {
+                if ((<any>script).readyState === 'loaded' || (<any>script).readyState === 'complete') {
+                    (<any>script).onreadystatechange = null;
                     onLoad();
                 }
             };

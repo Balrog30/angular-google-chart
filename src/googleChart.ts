@@ -1,12 +1,8 @@
-/* global angular, google */
-/* jshint -W072 */
-(function(){
-    angular.module('googlechart')
-        .directive('googleChart', googleChartDirective);
-        
+module angularGoogleChart
+{
     googleChartDirective.$inject = [];
         
-    function googleChartDirective() {
+    function googleChartDirective(): ng.IDirective {
 
         return {
             restrict: 'A',
@@ -14,4 +10,7 @@
             controller: 'GoogleChartController'
         };
     }
-})();
+    
+    angular.module('googlechart')
+        .directive('googleChart', googleChartDirective);
+}

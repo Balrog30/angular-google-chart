@@ -1,13 +1,16 @@
-/* global angular */
-(function(){
-    angular.module('googlechart')
-        .directive('agcOnError', onErrorDirective);
-    function onErrorDirective(){
+module angularGoogleChart
+{
+    interface IOnErrorDirectiveAttributes extends ng.IAttributes
+    {
+        agcOnError: string;
+    }
+    
+    function onErrorDirective(): ng.IDirective{
         return{
             restrict: 'A',
             scope: false,
             require: 'googleChart',
-            link: function(scope, element, attrs, googleChartController){
+            link: function(scope, element, attrs: IOnErrorDirectiveAttributes, googleChartController){
                 callback.$inject = ['chartWrapper', 'chart', 'args'];
                 function callback(chartWrapper, chart, args){
                     var returnValues = {
@@ -27,4 +30,7 @@
             }
         };
     }
-})();
+    
+    angular.module('googlechart')
+        .directive('agcOnError', onErrorDirective);
+}

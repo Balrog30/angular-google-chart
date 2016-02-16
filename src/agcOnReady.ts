@@ -1,14 +1,16 @@
-/* global angular */
-(function(){
-    angular.module('googlechart')
-        .directive('agcOnReady', onReadyDirective);
-        
-    function onReadyDirective(){
+module angularGoogleChart
+{
+    interface IOnReadyDirectiveAttributes extends ng.IAttributes
+    {
+        agcOnReady: string;
+    }
+    
+    function onReadyDirective(): ng.IDirective{
         return {
             restrict: 'A',
             scope: false,
             require: 'googleChart',
-            link: function(scope, element, attrs, googleChartController){
+            link: function(scope, element, attrs: IOnReadyDirectiveAttributes, googleChartController){
                 callback.$inject=['chartWrapper'];
                 function callback(chartWrapper){
                     scope.$apply(function (){
@@ -19,4 +21,7 @@
             }
         };
     }
-})();
+    
+    angular.module('googlechart')
+        .directive('agcOnReady', onReadyDirective);
+}

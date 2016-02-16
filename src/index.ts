@@ -7,6 +7,7 @@
 /// <reference path="agcOnMouseout.ts" />
 /// <reference path="agcOnMouseover.ts" />
 /// <reference path="agcOnReady.ts" />
+/// <reference path="agcOnSelect.ts" />
 /// <reference path="FormatManager.ts" />
 /// <reference path="googleChart.ts" />
 /// <reference path="googleChartApiConfig.ts" />
@@ -14,3 +15,4 @@
 /// <reference path="GoogleChartController.ts" />
 /// <reference path="googleChartService.ts" />
 /// <reference path="googleJsapiUrl.ts" />
+

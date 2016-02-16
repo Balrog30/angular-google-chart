@@ -1,15 +1,16 @@
-/* global angular */
-
-(function(){
-    angular.module('googlechart')
-        .directive('agcOnMouseover', agcOnMouseoverDirective);
+module angularGoogleChart
+{
+    interface IOnMouseoverDirectiveAttributes extends ng.IAttributes
+    {
+        agcOnMouseover: string;
+    }
     
-    function agcOnMouseoverDirective(){
+    function agcOnMouseoverDirective(): ng.IDirective{
         return {
             restrict: 'A',
             scope: false,
             require: 'googleChart',
-            link: function(scope, element, attrs, googleChartController){
+            link: function(scope, element, attrs: IOnMouseoverDirectiveAttributes, googleChartController){
                 callback.$inject = ['args', 'chart', 'chartWrapper'];
                 function callback(args, chart, chartWrapper){
                     var returnParams = {
@@ -27,4 +28,7 @@
             }
         };
     }
-})();
+    
+    angular.module('googlechart')
+        .directive('agcOnMouseover', agcOnMouseoverDirective);
+}

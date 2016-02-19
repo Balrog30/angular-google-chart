@@ -22,7 +22,8 @@
     "graph"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "npm run build && karma start"
   },
   "license": "MIT",
   "dependencies": {
@@ -30,16 +31,15 @@
   },
   "devDependencies": {
     "angular-mocks": "^1.2.28",
-    "bardjs": "^0.1.8",
-    "jasmine-core": "^2.3.4",
-    "karma": "^0.13.9",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.21",
     "karma-chrome-launcher": "^0.2.2",
-    "karma-coverage": "^0.5.2",
-    "karma-jasmine": "^0.3.6",
-    "karma-jasmine-matchers": "^2.0.0-beta1",
-    "karma-phantomjs-launcher": "^0.2.1",
-    "karma-sinon": "^1.0.4",
-    "phantomjs": "^1.9.18",
+    "karma-coverage": "^0.5.3",
+    "karma-jasmine": "^0.3.7",
+    "karma-jasmine-matchers": "^2.0.1",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "phantomjs-prebuilt": "^2.1.4",
     "sinon": "^1.16.1",
     "typescript": "^1.8.0",
     "typings": "^0.6.8"

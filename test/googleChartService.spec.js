@@ -33,23 +33,6 @@ describe('GoogleChartService', function() {
         });
     });
 
-    it('should have public interface methods', function() {
-        expect(googleChartService).toHaveMethod('isApiReady');
-        expect(googleChartService).toHaveMethod('getChartWrapper');
-        expect(googleChartService).toHaveMethod('getData');
-        expect(googleChartService).toHaveMethod('getElement');
-        expect(googleChartService).toHaveMethod('getOption');
-        expect(googleChartService).toHaveMethod('getOptions');
-        expect(googleChartService).toHaveMethod('registerChartListener');
-        expect(googleChartService).toHaveMethod('registerServiceListener');
-        expect(googleChartService).toHaveMethod('registerWrapperListener');
-        expect(googleChartService).toHaveMethod('setData');
-        expect(googleChartService).toHaveMethod('setup');
-        expect(googleChartService).toHaveMethod('setElement');
-        expect(googleChartService).toHaveMethod('setOption');
-        expect(googleChartService).toHaveMethod('setOptions');
-    });
-
     it('should set and get individual options', function() {
         var result, value = 'Some Chart Title';
         googleChartService.setOption('title', value);

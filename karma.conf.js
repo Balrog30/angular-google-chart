@@ -7,7 +7,7 @@ module.exports = function (config) {
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['jasmine', 'jasmine-matchers', 'sinon'],
+        frameworks: ['jasmine', 'jasmine-matchers'],
 
 
         // list of files / patterns to load in the browser
@@ -15,8 +15,7 @@ module.exports = function (config) {
           'node_modules/angular/angular.js',
           'node_modules/angular-mocks/angular-mocks.js',
           'node_modules/bardjs/dist/bard.js',
-          'src/googlechart.module.js',
-          'src/*.js',
+          'ng-google-chart.js',
           'test/google.mock.js', //looking for a better way to handle mocks
           'test/*.spec.js'
         ],
@@ -29,7 +28,7 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'src/**/*.js': ['coverage']
+            '/*.js': ['coverage', 'sourcemap']
         },
 
 
@@ -59,7 +58,7 @@ module.exports = function (config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['PhantomJS'],
+        browsers: ['PhantomJS', 'Chrome'],
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
